@@ -15,8 +15,16 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res){
-    res.render('index');
-})
+    res.render('index',{title: 'Welcome'});
+});
+
+app.get('/about', function(req, res){
+    res.render('about');
+});
+
+app.get('/contact', function(req, res){
+    res.render('contact');
+});
 
 app.listen(3000);
 console.log('Server is running on port 3000...');
